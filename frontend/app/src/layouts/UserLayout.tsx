@@ -25,7 +25,7 @@ const UserLayout: React.FC = () => {
 	return (
 		<>
 			<Header />
-			<main>
+			<main className="pt-16">
 				<Routes>
 					<Route path="/register" element={<Register />} />
 					<Route path="/login" element={<Login />} />

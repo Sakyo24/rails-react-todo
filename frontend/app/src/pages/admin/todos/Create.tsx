@@ -13,7 +13,11 @@ const Create: React.FC = () => {
 		}
 	}, []);
 
-	return <div>Create</div>;
+	return (
+		<div>
+			<h3 className="p-3 text-xl font-bold">Todo新規登録</h3>
+		</div>
+	);
 };
 
 export default Create;

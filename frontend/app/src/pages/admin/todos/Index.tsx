@@ -13,7 +13,11 @@ const Index: React.FC = () => {
 		}
 	}, []);
 
-	return <div>Index</div>;
+	return (
+		<div>
+			<h3 className="p-3 text-xl font-bold">Todo一覧</h3>
+		</div>
+	);
 };
 
 export default Index;
