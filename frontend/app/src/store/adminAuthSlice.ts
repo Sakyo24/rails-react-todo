@@ -52,7 +52,7 @@ const adminAuthSlice = createSlice({
 			// ログイン
 			.addCase(adminLogin.fulfilled, (state, action) => {
 				state.isAuthenticated = true;
-				state.admin = action.payload;
+				state.admin = action.payload.data;
 			})
 			.addCase(adminLogin.rejected, (_state, _action) => {
 				alert("ログインに失敗しました。");
@@ -68,7 +68,7 @@ const adminAuthSlice = createSlice({
 			// ログイン管理者取得
 			.addCase(currentAdmin.fulfilled, (state, action) => {
 				state.isAuthenticated = true;
-				state.admin = action.payload;
+				state.admin = action.payload.data;
 			})
 			.addCase(currentAdmin.rejected, (state, _action) => {
 				state.isAuthenticated = false;

@@ -73,7 +73,7 @@ const userAuthSlice = createSlice({
 			// 登録
 			.addCase(userRegister.fulfilled, (state, action) => {
 				state.isAuthenticated = true;
-				state.user = action.payload;
+				state.user = action.payload.data;
 			})
 			.addCase(userRegister.rejected, (_state, _action) => {
 				alert("登録に失敗しました。");
@@ -81,7 +81,7 @@ const userAuthSlice = createSlice({
 			// ログイン
 			.addCase(userLogin.fulfilled, (state, action) => {
 				state.isAuthenticated = true;
-				state.user = action.payload;
+				state.user = action.payload.data;
 			})
 			.addCase(userLogin.rejected, (_state, _action) => {
 				alert("ログインに失敗しました。");
@@ -97,7 +97,7 @@ const userAuthSlice = createSlice({
 			// ログインユーザー取得
 			.addCase(currentUser.fulfilled, (state, action) => {
 				state.isAuthenticated = true;
-				state.user = action.payload;
+				state.user = action.payload.data;
 			})
 			.addCase(currentUser.rejected, (state, _action) => {
 				state.isAuthenticated = false;

@@ -23,9 +23,9 @@ const Login: React.FC = () => {
 
 	return (
 		<div>
-			<h3>ログイン</h3>
-			<form>
-				<div>
+			<h3 className="p-3 text-xl font-bold">ログイン</h3>
+			<form className="w-150 m-auto p-5 border-1 border-cyan-300">
+				<div className="mb-3">
 					<label htmlFor="email">メールアドレス</label>
 					<input
 						id="email"
@@ -34,9 +34,10 @@ const Login: React.FC = () => {
 						value={email}
 						onChange={(e) => setEmail(e.target.value)}
 						autoComplete="email"
+						className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
 					/>
 				</div>
-				<div>
+				<div className="mb-3">
 					<label htmlFor="password">パスワード</label>
 					<input
 						id="password"
@@ -45,9 +46,17 @@ const Login: React.FC = () => {
 						value={password}
 						onChange={(e) => setPassword(e.target.value)}
 						autoComplete="current-password"
+						className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
 					/>
 				</div>
-				<div onClick={handleLogin}>ログイン</div>
+				<div className="text-center">
+					<div
+						onClick={handleLogin}
+						className="ml-5 sm:inline-flex text-white bg-cyan-400 hover:bg-cyan-300 focus:ring-4 focus:ring-cyan-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center items-center cursor-pointer"
+					>
+						ログイン
+					</div>
+				</div>
 			</form>
 		</div>
 	);

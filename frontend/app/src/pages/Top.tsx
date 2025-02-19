@@ -14,9 +14,9 @@ const Top: React.FC = () => {
 	}, [isAuth, navigate]);
 
 	return (
-		<div>
-			<div>
-				<p>Ruby on Rails × React TODOアプリ</p>
+		<div className="top-page text-center flex items-center">
+			<div className="w-screen text-5xl">
+				<p className="text-cyan-400">Ruby on Rails × React TODOアプリ</p>
 			</div>
 		</div>
 	);

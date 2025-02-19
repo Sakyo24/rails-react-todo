@@ -13,7 +13,11 @@ const Edit: React.FC = () => {
 		}
 	}, []);
 
-	return <div>Edit</div>;
+	return (
+		<div>
+			<h3 className="p-3 text-xl font-bold">Todo編集</h3>
+		</div>
+	);
 };
 
 export default Edit;

@@ -23,7 +23,7 @@ const AdminLayout: React.FC = () => {
 	return (
 		<>
 			<Header />
-			<main>
+			<main className="pt-16">
 				<Routes>
 					<Route path="/login" element={<Login />} />
 					<Route path="/todos" element={<TodosIndex />} />
