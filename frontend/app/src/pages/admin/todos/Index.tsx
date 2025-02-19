@@ -3,17 +3,17 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../../store";
 import { useNavigate } from "react-router-dom";
 
-const Edit: React.FC = () => {
+const Index: React.FC = () => {
 	const navigate = useNavigate();
-	const isAuth = useSelector((state: RootState) => state.userAuth.isAuthenticated);
+	const isAuth = useSelector((state: RootState) => state.adminAuth.isAuthenticated);
 
 	useEffect(() => {
 		if (!isAuth) {
-			navigate("/login");
+			navigate("/admin/login");
 		}
 	}, []);
 
-	return <div>Edit</div>;
+	return <div>Index</div>;
 };
 
-export default Edit;
+export default Index;

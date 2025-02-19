@@ -54,6 +54,11 @@ $ bundle install
 $ bundle exec rails db:create
 ```
 
+シーダーの実行
+```
+$ bundle exec rails db:seed
+```
+
 ### フロントエンド
 frontコンテナにアクセス
 ```

@@ -2,23 +2,23 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { AppDispatch, RootState } from "../../store";
-import { userLogin } from "../../store/userAuthSlice";
+import { adminLogin } from "../../store/adminAuthSlice";
 
 const Login: React.FC = () => {
 	const dispatch = useDispatch<AppDispatch>();
 	const navigate = useNavigate();
-	const isAuth = useSelector((state: RootState) => state.userAuth.isAuthenticated);
+	const isAuth = useSelector((state: RootState) => state.adminAuth.isAuthenticated);
 	const [email, setEmail] = useState<string>("");
 	const [password, setPassword] = useState<string>("");
 
 	useEffect(() => {
 		if (isAuth) {
-			navigate("/todos");
+			navigate("/admin/todos");
 		}
 	}, [isAuth, navigate]);
 
 	const handleLogin = () => {
-		dispatch(userLogin({ email, password }));
+		dispatch(adminLogin({ email, password }));
 	};
 
 	return (
@@ -30,7 +30,7 @@ const Login: React.FC = () => {
 					<input
 						id="email"
 						type="email"
-						placeholder="user1@example.com"
+						placeholder="admin1@example.com"
 						value={email}
 						onChange={(e) => setEmail(e.target.value)}
 						autoComplete="email"
