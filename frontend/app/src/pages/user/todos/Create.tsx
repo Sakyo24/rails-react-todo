@@ -1,12 +1,17 @@
-import React from "react";
-import { Navigate } from "react-router-dom";
+import React, { useEffect } from "react";
+import { useSelector } from "react-redux";
+import { RootState } from "../../../store";
+import { useNavigate } from "react-router-dom";
 
 const Create: React.FC = () => {
-	const user = true;
+	const navigate = useNavigate();
+	const isAuth = useSelector((state: RootState) => state.userAuth.isAuthenticated);
 
-	if (!user) {
-		return <Navigate to="/login" />;
-	}
+	useEffect(() => {
+		if (!isAuth) {
+			navigate("/login");
+		}
+	}, []);
 
 	return <div>Create</div>;
 };

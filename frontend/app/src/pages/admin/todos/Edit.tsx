@@ -5,11 +5,11 @@ import { useNavigate } from "react-router-dom";
 
 const Edit: React.FC = () => {
 	const navigate = useNavigate();
-	const isAuth = useSelector((state: RootState) => state.userAuth.isAuthenticated);
+	const isAuth = useSelector((state: RootState) => state.adminAuth.isAuthenticated);
 
 	useEffect(() => {
 		if (!isAuth) {
-			navigate("/login");
+			navigate("/admin/login");
 		}
 	}, []);
 
